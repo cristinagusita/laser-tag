@@ -1,0 +1,44 @@
+.unpaidHeader{
+    background:rgb(0,0,0,0.7);
+}
+.unpaid{
+    background: rgb(0,0,0,0.5);
+}
+.unpaidHeader, .unpaid div{
+    display: flex;
+    padding:10px;
+}
+.unpaidHeader span{
+    width:25%;
+    font-size:25px;
+}
+.unpaid div span{
+    width:25%;
+}
+.totalUnpaid{
+    text-align: right;
+    background:rgb(0,0,0,0.9);
+    width:calc(100% - 40px);
+    padding:20px;
+    font-size:20px;
+}
+.resExpired{
+    background: rgb(122, 121, 121, 0.6);
+    text-decoration: line-through;
+}
+.payAll{
+    display: flex;
+    justify-content: center;
+}
+.payAll span{
+    background:rgb(20, 149, 137);
+    padding:10px;
+    margin-top:10px;
+    box-shadow:var(--sparkling-shadow);
+    cursor: pointer;
+    font-size:20px;
+}
+.payAll span:hover, .payAll span:focus{
+    background:white;
+    color:rgb(20, 149, 137);
+}

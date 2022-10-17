@@ -1,0 +1,66 @@
+.bookingContainer {
+  display: flex;
+  box-shadow: var(--sparkling-shadow);
+}
+.bookingColumn {
+  width: 50%;
+  background: rgb(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+.bookingColumnHeader {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 25px;
+  background: rgb(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+.bookingColumnData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.bookingColumnData span {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+.bookedSpecialOffers {
+  margin-top: 70px;
+  box-shadow:var(--sparkling-shadow);
+}
+.bookedSpecialOffersHeader {
+  background: rgb(0, 0, 0, 0.8);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-size:30px;
+}
+.bookedSpecialOffersContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  background: rgb(0, 0, 0, 0.6);
+}
+.bookedSpecialOffersContainer span{
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+.bookingColumnData>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paid{
+  background: yellowgreen;
+}
+.unpaid{
+  background: tomato;
+}
+.paid, .unpaid{
+  padding:5px;
+  border-radius: 10px;
+}

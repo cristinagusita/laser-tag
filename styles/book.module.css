@@ -1,0 +1,52 @@
+.bookingContainer{
+    display: flex;
+    background:rgb(0,0,0,0.7);
+    padding:20px;
+    box-shadow:var(--sparkling-shadow);
+    margin-top:20px;
+}
+.bookColumn{
+    width:33.33%;
+}
+.bookColumnHeader{
+    font-size:25px;
+}
+.bookIntervals{
+    display: flex;
+}
+.time_interval{
+    display:inline-table;
+    width:50%;
+    color:rgb(47, 122, 183);
+    font-size:20px;
+    cursor: pointer;
+}
+.time_interval:hover{
+    color:white;
+}
+.phoneNumberInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-bottom:20px;
+}
+.phoneNumberInput>*{
+    padding:10px;
+}
+.unavailable_time{
+    color:red;
+}
+.bookingTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bookingTop > *{
+    margin:5px;
+}
+.explanation{
+    background: rgba(130, 180, 241, 0.7);
+    padding:10px;
+}

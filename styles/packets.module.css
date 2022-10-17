@@ -1,0 +1,81 @@
+.packetContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.packet {
+  box-sizing: border-box;
+  width: calc(33.3% - 20px);
+  background: rgba(33, 86, 243, 0.6);
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px 10px #0ff;
+  border: 4px solid white;
+}
+.packetLinear,
+.packetText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.packetLinear {
+  margin-bottom: 10px;
+}
+.packetLinear * {
+  font-size: 25px;
+}
+.packetName {
+  font-size: 30px;
+  font-family: title-font;
+  color: rgb(205, 237, 62);
+}
+.packetText {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.cta {
+  display: table;
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.cta span {
+  background: rgb(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.reserveButton {
+  background: rgb(205, 237, 62, 0.7);
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--sparkling-shadow);
+  cursor: pointer;
+  color: black;
+}
+
+.packetsTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.packetsTop > * {
+  margin: 5px;
+}
+.explanation {
+  background: rgba(130, 180, 241, 0.7);
+  padding: 10px;
+}

@@ -1,0 +1,68 @@
+.reserveButton{
+    background:rgb(20, 149, 137) !important;
+    border:none;
+    padding:10px;
+    font-size:30px;
+    border-radius:10px;
+    color:rgb(0,0,0,0.8);
+    box-shadow:0px 0px 40px 10px #0ff;
+}
+.reserveButtonTop{
+    float:right;
+}
+.mini_title{
+    background:rgb(0,0,0,0.7);
+    margin:-20px;
+    margin-bottom:10px;
+    padding:50px;
+}
+.mini_title span{
+    font-size: 50px;
+    color: rgb(134, 176, 202);
+    text-shadow: 10px 5px 20px blue;
+}
+.about_container{
+    display:flex;
+    margin:20px;
+    justify-content: center;
+}
+.about_column{
+    width:25%;
+    display: flex;
+    flex-direction: column;
+   padding:20px;
+   background: rgb(0,50,100,0.7); 
+   align-items:center;
+   border-radius:10px;
+}
+.about_title{
+    font-size:20px;
+    border-bottom:2px solid white;
+    border-radius:10px;
+    font-weight: bold;
+    margin:5px;
+    background:rgb(0, 65, 120, 0.7);
+    padding:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    display: table;
+}
+.about_content span{
+    display: table;
+    margin-top:10px;
+}
+.about_sentence{
+    display:flex;
+    justify-content: center;
+}
+.about_sentence div{
+    background:rgb(0, 65, 120, 0.7);
+    border-radius:10px;
+    width:50%;
+    padding:30px;
+}
+.reserveButtonBottomContainer{
+    margin:40px;
+    display: flex;
+    justify-content: center;
+}

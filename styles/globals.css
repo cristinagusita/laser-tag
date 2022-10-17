@@ -1,0 +1,155 @@
+*{
+transition: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+transition-duration: 0.4s;
+padding:0px;
+margin:0px;
+font-family: sans-serif;
+font-size:18px;
+color:white;  
+--shadow: 0px 4px 5px 0px hsla(0, 0%, 0%, 0.14),
+0px 1px 10px 0px hsla(0, 0%, 0%, 0.12),
+0px 2px 4px -1px hsla(0, 0%, 0%, 0.2);
+--sparkling-shadow:0px 0px 40px 10px #0ff;
+}
+
+@font-face {
+    font-family: title-font;
+    src: url("../public/Monoton-Regular.ttf");
+}
+
+body{
+    background:url("/background.png");
+    background-size:cover !important;
+}
+header{
+    box-shadow:var(--shadow);
+    width:100%;
+}
+nav{
+    background:rgba(52, 120, 147, 0.4);
+    padding:20px;
+    padding-right:10px;
+    height:30px;
+    display: flex;
+    align-items:center;
+}
+nav:nth-child(2){
+    float:right;
+    position:absolute;
+    top:0;
+    right:0;
+}
+nav a{
+    padding:10px;
+}
+nav a:hover{
+    background:rgb(0,0,0,0.3);
+}
+a{
+    text-decoration: none;
+}
+.leftNav a{
+    font-size:30px;
+    font-family:title-font;
+}
+
+main{
+    padding:20px;
+}
+
+footer{
+    background:rgb(0,0,0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:30px;
+}
+.footerLinks a{
+    color:rgb(252, 3, 181);
+    font-weight: bold;
+}
+
+.mini_title{
+    background:rgb(0,0,0,0.7);
+    margin:-20px;
+    margin-bottom:10px;
+    padding:50px;
+}
+.mini_title span{
+    font-size: 50px;
+    color: rgb(134, 176, 202);
+    text-shadow: 10px 5px 20px blue;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(0,0,0,0.5);
+}
+form>span{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    margin-bottom:5px;
+}
+form>span>label{
+    width:200px;
+}
+input, textarea{
+    background:rgb(0,0,100,0.6);
+    border:0;
+    padding:5px;
+    outline:none !important;
+    color:white;
+    width:200px;
+}
+input:hover, input:focus, button:hover, button:focus, textarea:hover, textarea:focus{
+    box-shadow:var(--shadow);
+    background:white;
+    color:rgb(0,0,100,0.6);
+}
+label{
+    display:table;
+    padding:5px;
+    text-align:right;
+}
+button{
+    color:white;
+    background:rgb(0,0,100,0.6);
+    border:0;
+    padding:10px;
+    cursor:pointer;
+}
+.centered{
+    display: flex;
+    justify-content: center;
+}
+.shoppingLink{
+    position: fixed;
+    bottom:10px;
+    right:10px;
+    background: white;
+    padding:20px;
+    border-radius: 100%;
+    box-shadow:var(--shadow);
+}
+.shoppingLink i{
+    color:rgb(20, 149, 137);
+    font-size:20px;
+}
+.shoppingLink:hover{
+    background:rgb(20, 149, 137);
+}
+.shoppingLink:hover i{
+    color:white;
+}
+.grayed{
+    background:gray !important;
+    box-shadow: var(--shadow) !important;
+}
+.grayed:hover{
+    background:#a9a1a1 !important;
+    color:white !important
+}

@@ -1,0 +1,60 @@
+.leftNav a{
+    font-size:30px;
+}
+.homeTitle{
+    clip-path:polygon(0px 0px, 25% -30%, 50% -20%, 75% 5%, 100% 90%, 100% 50%, 75% 150%, 95% 75%, 100% 100%, 75% 130%, 50% 120%, 25% 95%, 0px 10%, 0% 50%, 25% -50%, 5% 25%);
+    padding:30px;
+    padding-left:100px;
+    padding-right:100px;
+    background:rgb(34, 163, 126, 0.7)
+}
+.homeTitle span{
+    text-shadow:none;
+    color:white;
+    font-family:title-font;
+}
+.reserveButton, .reserveButton:hover{
+    background:rgb(20, 149, 137) !important;
+    border:none;
+    padding:10px;
+    font-size:30px;
+    border-radius:10px;
+    color:rgb(0,0,0,0.8);
+    box-shadow:0px 0px 40px 10px #0ff;
+}
+.innerTitle > *{
+    display: table;
+}
+.innerTitle > button{
+    margin-top:100px;
+    margin-bottom:20px;
+    color:white;
+}
+.useless_container{
+    background:rgb(9, 11, 39, 0.6);
+    width:calc(100% + 40px);
+    margin:-20px;
+    margin-top:-10px;
+    padding-top:20px;
+    padding-bottom:10px;
+    background:rgb(0,0,0,0.7);
+}
+.useless_text{
+    display: table;
+    margin:20px;
+    font-size:25px;
+    text-shadow:none;
+    color:white;
+    -webkit-text-stroke: 1px rgb(16, 99, 42);
+    text-align:center;
+}
+.bottomPicture{
+    display: flex;
+    margin-top:40px;
+}
+.bottomPicture img{
+    width:calc(50% - 40px);
+    margin-left:20px;
+    margin-right:20px;
+    box-shadow:0px 0px 40px 10px #0ff;
+}
