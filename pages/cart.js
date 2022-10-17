@@ -32,8 +32,8 @@ export default function cart() {
       let data = {
         paid: true,
       };
-      updateDoc(docref, data).then(()=>{
-        if(i == total - 1){
+      updateDoc(docref, data).then(() => {
+        if (i == total - 1) {
           window.location.pathname = window.location.pathname
         }
       });
@@ -41,6 +41,51 @@ export default function cart() {
   };
 
   let generate_pdf = () => {
+
+    let card_number = paymentInfo["card_number"]
+    if(card_number.length != 16){
+      NotificationManager.error("Card Number must be 16 digits")
+      return;
+    }
+
+    try{
+      parseInt(card_number)
+    } catch{
+      NotificationManager.error("Card Number appears to be invalid")
+      return
+    }
+
+    let owner_name = paymentInfo["owner_name"]
+    if(owner_name.length < 2){
+      NotificationManager.error("Owner name is too short")
+      return
+    }
+
+    let exp_date = paymentInfo["exp_date"]
+    let cvv = paymentInfo["cvv"]
+    window.cv = cvv
+    if(cvv.length != 3){
+      NotificationManager.error("CVV must be 3 digits")
+      return
+    }
+
+    try{
+      parseInt(cvv)
+    } catch {
+      NotificationManager.error("CVV does not appear to be valid")
+      return
+    }
+
+    if(isNaN(parseInt(cvv))){
+      NotificationManager.error("CVV should be a 3 digit number")
+      return
+    }
+
+    if(paymentInfo["exp_date"] == ""){
+      NotificationManager.error("Please select the expiration date")
+      return
+    }
+
     let pdfdoc = new jsPDF();
     pdfdoc.setFontSize(20);
     let text = "Laser Tag receipt";
@@ -74,7 +119,20 @@ export default function cart() {
   let loading = true;
   let [upd, setUpd] = useState(true)
   let [unpaid, setUnpaid] = useState([]);
+  var dtToday = new Date();
+
+  var month = dtToday.getMonth() + 1;
+  var day = dtToday.getDate();
+  var year = dtToday.getFullYear();
+
+  if (month < 10)
+    month = '0' + month.toString();
+  if (day < 10)
+    day = '0' + day.toString();
+
+  var maxDate = year + '-' + month + '-' + day;
   let [total, setTotal] = useState(0);
+  let [today, setToday] = useState(maxDate);
   let db = getFirestore();
   let auth = getAuth();
   let _user = null;
@@ -150,6 +208,20 @@ export default function cart() {
     });
   }, [upd]);
 
+  let [paymentInfo, setPaymentInfo] = useState({
+    "card_number": "",
+    "owner_name": "",
+    "exp_date": "",
+    "cvv": "",
+  })
+
+  let updatePaymentInfo = (e) => {
+    setPaymentInfo({
+      ...paymentInfo,
+      [e.target.name]: e.target.value,
+    });
+  }
+
   return (
     <>
       <PageHeader title="Shopping cart" />
@@ -164,9 +236,15 @@ export default function cart() {
         <div className={styles.unpaid}>{unpaid}</div>
       </div>
       <div className={styles.totalUnpaid}>Total:{total}</div>
+      <form className={styles.detailsForm} onChange={updatePaymentInfo}>
+        <span><label for="card_number">Card number</label><input type="number" name="card_number" placeholder="Card number" /></span>
+        <span><label for="owner_name">Card owner name</label><input type="text" name="owner_name" placeholder="Your name" /></span>
+        <span><label for="exp_date">Expiration date</label><input type="date" name="exp_date" min={today} placeholder="Expiration date" /></span>
+        <span><label for="cvv">CVV</label><input type="text" name="cvv" placeholder="CVV" /></span>
+      </form>
       <div className={styles.payAll}>
-        {unix_to_update.length > 0 && <span onClick={generate_pdf}>Pay all</span> }
-        {(unix_to_update.length == 0) && <span class = "grayed">Nothing to pay!</span>}
+        {unix_to_update.length > 0 && <span onClick={generate_pdf}>Pay all</span>}
+        {(unix_to_update.length == 0) && <span class="grayed">Nothing to pay!</span>}
       </div>
     </>
   );
